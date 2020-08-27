@@ -12,9 +12,6 @@ df <- na.omit(df)
 df$Date <- as.Date(df$Date, format = "%d/%m/%Y")
 df <- subset(df, Date >= "2007-02-01" & Date <= "2007-02-02")
 
-# Converting to numeric datatype
-df$Global_active_power <- as.numeric(df$Global_active_power)
-
 # creating device, construct and export graph
 png(filename = "plot1.png", 480, 480)
 hist(df$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
